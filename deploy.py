@@ -7,9 +7,9 @@ VERSION_FILE = os.path.join(ROOT_DIR, "version.txt")
 
 if __name__ == "__main__":
     # Write new version
-    previous_version = open(VERSION_FILE).read()
+    previous_version = open(VERSION_FILE).read().strip()
     main, minor = previous_version.rsplit(".", 1)
-    new_version = "{main}.{minor}".format(main=main, minor=int(minor) + 1)
+    new_version = "{main}.{minor}\n".format(main=main, minor=int(minor) + 1)
     open(VERSION_FILE, "wt").write(new_version)
 
     # Export requirements.txt
