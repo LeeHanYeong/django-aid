@@ -61,7 +61,6 @@ def localtime(value, time_format=settings.TIME_FORMAT):
     try:
         return dateformat.time_format(value, time_format)
     except Exception as e:
-        capture_exception(e)
         return value
 
 
@@ -69,7 +68,6 @@ def localdate(value, date_format=settings.DATE_FORMAT):
     try:
         return dateformat.format(timezone_localdate(value), date_format)
     except Exception as e:
-        capture_exception(e)
         return value
 
 
@@ -77,7 +75,6 @@ def localdatetime(value, datetime_format=settings.DATETIME_FORMAT):
     try:
         return dateformat.format(timezone_localtime(value), datetime_format)
     except Exception as e:
-        capture_exception(e)
         return value
 
 
